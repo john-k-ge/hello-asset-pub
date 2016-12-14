@@ -1,0 +1,13 @@
+---
+applications:
+  - name: hello-asset
+    buildpack: https://github.com/cloudfoundry/go-buildpack
+    memory: 128M
+    services:
+      - service-uaa
+env:
+  SERVICE_NAME: "predix-asset"
+  SERVICE_PLAN: "Tiered"
+  CLIENT: "asset_client"
+  SECRET: "1234567890"
+  SUPERSECRET: "1234567890"

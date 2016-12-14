@@ -1,0 +1,40 @@
+{
+	"ImportPath": "hello-asset",
+	"GoVersion": "go1.7",
+	"GodepVersion": "v74",
+	"Deps": [
+		{
+			"ImportPath": "github.build.ge.com/212419672/cf-service-tester/cfServiceDiscovery",
+			"Rev": "9b3b6ecb74241df1c7c5012a1b24dff4f8861944"
+		},
+		{
+			"ImportPath": "github.build.ge.com/212419672/predix-helper",
+			"Rev": "70a9f66fdfd5cf7ef089adc439995947170da74d"
+		},
+		{
+			"ImportPath": "github.com/cloudfoundry-community/go-cfenv",
+			"Comment": "v1.14.0-7-gc567d77",
+			"Rev": "c567d77dab8551bc4077e68e5a04415f1d74a911"
+		},
+		{
+			"ImportPath": "github.com/mitchellh/mapstructure",
+			"Rev": "f3009df150dadf309fdee4a54ed65c124afad715"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context",
+			"Rev": "0dd7c8d7c3a523ec6fc7c7e0e4210469e15e833e"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2",
+			"Rev": "d5040cddfc0da40b408c9a1da4728662435176a9"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2/clientcredentials",
+			"Rev": "d5040cddfc0da40b408c9a1da4728662435176a9"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2/internal",
+			"Rev": "d5040cddfc0da40b408c9a1da4728662435176a9"
+		}
+	]
+}
