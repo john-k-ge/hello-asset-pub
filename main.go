@@ -23,11 +23,11 @@ var myService cfServiceDiscovery.ServiceDescriptor
 var assetConfig envStructs.AssetConfig               // stores data to pass to Asset
 var assetUaa, adminUaa uaaIntegration.PredixUaaCreds // stores data to get UAA token
 var sampleAssetData *envStructs.AssetModel
-var createUaaClientPath = "/oauth/clients"
-var deleteUaaClientPath = "/oauth/clients/%s"
 
+const createUaaClientPath = "/oauth/clients"
+const deleteUaaClientPath = "/oauth/clients/"
 const assetRoot = "/assets"
-const uaaLabel string = "predix-uaa"
+const uaaLabel string = "predix-uaa-training"
 
 /**
 
@@ -173,6 +173,8 @@ func exerciseAsset(w http.ResponseWriter, req *http.Request) {
 			fmt.Fprintf(w, "We have a match:  inserted: %v, queried: %v.  :thumbsup:\n", sampleAssetData.Id, asset.Id)
 			break
 		}
+		fmt.Printf("OH NO!  I looked for `%v`, but got back `%v`", sampleAssetData.Id, asset.Id)
+		fmt.Fprintf(w, "OH NO!  I looked for `%v`, but got back `%v` :thumbsdown:\n", sampleAssetData.Id, asset.Id)
 	}
 
 }
@@ -232,7 +234,7 @@ func deleteUaaClient() error {
 	}
 
 	fmt.Print("Got an admin client!  About to build DELETE request...\n")
-	finalPath := fmt.Sprintf(adminUaa.Uri+deleteUaaClientPath, assetUaa.ClientId)
+	finalPath := fmt.Sprint(adminUaa.Uri + deleteUaaClientPath + assetUaa.ClientId)
 	fmt.Printf("Here's the UAA path to delete:  %v\n", finalPath)
 
 	request, err := http.NewRequest("DELETE", finalPath, strings.NewReader(""))
@@ -346,7 +348,6 @@ func init() {
 		}
 		sampleAssetData = &temp
 	}
-
 }
 
 func main() {

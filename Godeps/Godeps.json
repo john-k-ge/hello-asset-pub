@@ -9,7 +9,7 @@
 		},
 		{
 			"ImportPath": "github.build.ge.com/212419672/predix-helper",
-			"Rev": "70a9f66fdfd5cf7ef089adc439995947170da74d"
+			"Rev": "526c239702b822676cf35472a242d804a3c26ed4"
 		},
 		{
 			"ImportPath": "github.com/cloudfoundry-community/go-cfenv",

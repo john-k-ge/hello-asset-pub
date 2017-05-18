@@ -40,14 +40,16 @@ var commonScopesAndAuthorities = []string{
 
 var adminScopesAndAuthorities = []string{
 	"clients.read",
-	"zones.read",
+	//"zones.read",
 	"clients.secret",
 	"idps.write",
 	"uaa.resource",
 	//"zones.5b9036c2-4040-41c0-b247-aa78e292ffe2.admin",
 	"clients.write",
 	"clients.admin",
-	"uaa.admin",
+	"sps.read",
+	"sps.write",
+	//"uaa.admin",
 	"idps.read",
 	"scim.write",
 	"scim.read",
@@ -107,6 +109,7 @@ func GetAdminUaaClient(uaaConf *PredixUaaCreds) (*http.Client, error) {
 	for _, scope := range adminScopesAndAuthorities {
 		uaaConf.Scopes = append(uaaConf.Scopes, scope)
 	}
+
 	//tempUaaConfig := &clientcredentials.Config{
 	//	ClientID:     uaaConf.ClientId,
 	//	ClientSecret: uaaConf.ClientSecret,
